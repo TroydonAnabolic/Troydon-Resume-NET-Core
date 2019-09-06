@@ -12,6 +12,7 @@ a.navbar-brand {
 -------------------------------------------------- */
 html {
   font-size: 14px;
+
 }
 @media (min-width: 768px) {
   html {
@@ -47,11 +48,12 @@ body {
   margin-bottom: 60px;
 }
 
-body {
-    background-image: url('../images/error-img.jpg');
+/*body {
+    background-image: url("~/images/error-img.jpg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+    background-size: cover;
+}*/
+
 
 .footer {
   position: absolute;

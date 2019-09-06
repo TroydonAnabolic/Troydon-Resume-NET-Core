@@ -50,7 +50,6 @@ namespace Troydon_Resume_Online_NET_Core_
             }
 
             app.UseHttpsRedirection();
-            app.UseFileServer();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 

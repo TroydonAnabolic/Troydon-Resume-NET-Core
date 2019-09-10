@@ -16,18 +16,31 @@
 <body>
     <!-- // Intro -->
     <header id="about">
-        <a href="downloadable_files/TroydonCV_IT_2019.docx" class="btn download" download="Troydon's Resume">
+        <a href="~/downloadable_files/TroydonCV_IT_2019.docx" class="btn download" download="Troydon's Resume">
             Download
             Resume
         </a>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#work">Work Experience</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-        </nav>
+
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+                <a class="navbar-brand" href="#">Home</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Work Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work">Work Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+       
         <div class="content-wrap">
-            <img src="images/profile-pic.jpg" alt="Troydon's picture" class="profile-pic col-narrow">
+            <img src="~/images/profile-pic.jpg" alt="Troydon's picture" class="profile-pic col-narrow">
             <div class="col-wide">
                 <h1>Troydon Luicien</h1>
                 <h2 id="main-title">Web Programmer Learner</h2>
@@ -57,7 +70,8 @@
                         <li>Basic MS Word, MS Excel, MS Power Point</li>
                     </ul>
                 </div>
-                <p>Follow this <a href="work-samples.html">link</a> to see my work samples.</p>
+                <p>Follow this <a href="~/work-samples.html">link</a> to see my work samples.</p>
+            </div>
             </div>
     </header>
 
@@ -185,7 +199,6 @@
                 </a>
             </div>
 
-            <p>Copyright &copy; 2019 by Troydon Luicien</p>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

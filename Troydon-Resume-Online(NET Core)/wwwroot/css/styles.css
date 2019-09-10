@@ -103,9 +103,10 @@ Navigation
 =============================*/
 nav {
     text-align: center;
-    background: white;
+    background: pink;
     position: fixed;
-    top: 0;
+
+    left: 0;
     width: 100%;
 }
 nav a {
@@ -118,7 +119,7 @@ nav a {
     margin: 0;
 }
 nav a:hover {
-    background: rgb(52, 164, 230);
+    background: rgb(52, 73, 230);
     border-style: groove;
     border-color: rgb(15, 66, 207);
 

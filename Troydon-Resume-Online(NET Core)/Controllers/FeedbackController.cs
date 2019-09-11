@@ -25,13 +25,19 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
         {
             var comment = new Comment
             {
-                Title = "My profile comment",
+                Title = "My profile comments",
                 Commented = DateTime.Now,
                 Person = "Troydon Luicien",
                 Body = "This is great website, do you not think so?"
             };
 
             return View(comment);
+        }
+
+        [Route("create")]
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }

@@ -84,10 +84,7 @@ header h1, header h2 {
 }
 /*footer*/
 footer {
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    bottom: 0px;
+
 }
 .contact-info a {
 

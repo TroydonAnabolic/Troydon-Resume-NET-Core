@@ -57,10 +57,3 @@ body {
 
 /* Nav styles
 -------------------------------------------------- */
-.resume {
-    text-align: center;
-    background: pink;
-    position: fixed;
-    left: 0;
-    width: 100%;
-}

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <script src="https://kit.fontawesome.com/199919a52c.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Troydon | Resume</title>
@@ -21,24 +20,24 @@
             Resume
         </a>
 
-            <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
-                <a class="navbar-brand" href="#">Home</a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Work Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#work">Work Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-       
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+            <a class="navbar-brand" href="#">Home</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Work Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#work">Work Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
         <div class="content-wrap">
             <img src="~/images/profile-pic.jpg" alt="Troydon's picture" class="profile-pic col-narrow">
             <div class="col-wide">
@@ -72,10 +71,14 @@
                 </div>
                 <p>Follow this <a href="~/work-samples.html">link</a> to see my work samples.</p>
             </div>
-            </div>
+        </div>
     </header>
 
     <main>
+        @*disable lorem text*@
+        @section lorem
+        {
+        }
         <!-- // Work Experience -->
         <section class="work" id="work">
             <div class="content-wrap">
@@ -173,10 +176,9 @@
         </section>
     </main>
 
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

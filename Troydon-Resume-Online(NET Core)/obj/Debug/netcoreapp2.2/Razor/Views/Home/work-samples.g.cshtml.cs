@@ -24,8 +24,8 @@ using Troydon_Resume_Online_NET_Core_.Models;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a40ad77fc650f309cf59cdcb48003501b5e914e4", @"/Views/Home/work-samples.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8300d73af55943cc9e3e81a975bcc948b74924af", @"/Views/_ViewImports.cshtml")]
-    public class Views_Home_work_samples : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"946cdbb139c51e010b78db6ba8936cfdb889d772", @"/Views/_ViewImports.cshtml")]
+    public class Views_Home_work_samples : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Troydon_Resume_Online_NET_Core_.Models.Comment>
     {
         #line hidden
         #pragma warning disable 0169
@@ -54,7 +54,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n");
             EndContext();
             BeginContext(37, 421, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a40ad77fc650f309cf59cdcb48003501b5e914e43588", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a40ad77fc650f309cf59cdcb48003501b5e914e43627", async() => {
                 BeginContext(43, 408, true);
                 WriteLiteral(@"
     <script src=""https://kit.fontawesome.com/199919a52c.js""></script>
@@ -82,7 +82,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(462, 2434, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a40ad77fc650f309cf59cdcb48003501b5e914e45196", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a40ad77fc650f309cf59cdcb48003501b5e914e45235", async() => {
                 BeginContext(468, 2421, true);
                 WriteLiteral(@"
     <header>
@@ -168,7 +168,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<Troydon_Resume_Online_NET_Core_.Models.Comment> Html { get; private set; }
     }
 }
 #pragma warning restore 1591

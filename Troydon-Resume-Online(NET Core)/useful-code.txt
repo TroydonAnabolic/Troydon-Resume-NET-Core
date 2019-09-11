@@ -3,3 +3,11 @@ Code to render specific style into one razor page
 @section Styles {
     <link href="@Url.Content("~/Styles/view_specific_style.css")" rel="stylesheet" type="text/css" />
 }
+
+var comment = new Comment
+{
+	Title = "My profile comment",
+	Commented = DateTime.Now,
+	Person = "Troydon Luicien",
+	Body = "This is great website, do you not think so?"	
+};

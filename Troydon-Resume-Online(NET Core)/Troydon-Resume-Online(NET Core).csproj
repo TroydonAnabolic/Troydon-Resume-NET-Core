@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="..\Troydon-Resume-Online%2528NET Core%2529\Views\Feedback\Comment.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Views\Home\Resume.cshtml" />
     <None Include="Views\Home\work-samples.cshtml" />
   </ItemGroup>

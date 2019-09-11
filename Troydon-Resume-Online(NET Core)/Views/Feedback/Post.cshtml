@@ -1,0 +1,15 @@
+﻿@model Troydon_Resume_Online_NET_Core_.Models.Post;
+@{
+    ViewData["Title"] = "Comments Page";
+}
+
+<body>
+    <div class="text-center">
+
+        <h1>@Model.Title</h1>
+
+        <p>Posted <span>@Model.Commented</span> by </p> <span>@Model.Person</span>
+
+        <p>@Model.Body</p>
+    </div>
+</body>

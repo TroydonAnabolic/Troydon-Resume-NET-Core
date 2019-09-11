@@ -7,7 +7,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
 
 namespace Troydon_Resume_Online_NET_Core_.Controllers
 {
-    // Class Starts with localhost:XXXX/feedback
+    // Class Starts with localhost:444348/feedback
     [Route("feedback")]
     public class FeedbackController : Controller
     {
@@ -18,12 +18,12 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             return new ContentResult { Content = "My CV Site feedback" };
         }
 
-        // TODO: Remove test values to access site: localhost:XXXX/feedback/2019/September/13/test
+        // TODO: Remove test values to access site: localhost:44348/feedback/2019/September/13/test
         [Route("{year:min(2019)}/{month?}/{day:range(1,31)?}/{key?}")]
         //POST
-        public IActionResult Comment(int year, string month, int day, string key)
+        public IActionResult Post(int year, string month, int day, string key)
         {
-            var comment = new Comment
+            var post = new Post
             {
                 Title = "My profile comments",
                 Commented = DateTime.Now,
@@ -31,7 +31,7 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
                 Body = "This is great website, do you not think so?"
             };
 
-            return View(comment);
+            return View();
         }
 
         [Route("create")]

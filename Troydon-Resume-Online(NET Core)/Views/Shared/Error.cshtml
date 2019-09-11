@@ -5,16 +5,20 @@
 }
 
 
-    <body>
-        <h1 class="text-info text-center" >OOPS!</h1>
-        <h2 class="text-info text-center">You broke it! :(</h2>
-        @if (Model.ShowRequestId)
-        {
-            <p class="text-center">
-                <strong>Request ID:</strong> <code>@Model.RequestId</code>
-            </p>
-        }
+@*@section Styles {
+    <link href="@Url.Content("~/css/error.css")" rel="stylesheet" type="text/css" />
+}*@
+
+<body>
+    <h1 class="text-info text-center">OOPS!</h1>
+    <h2 class="text-info text-center">You broke it! :(</h2>
+    @if (Model.ShowRequestId)
+    {
+        <p class="text-center">
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
 
     <img src="~/images/error-img.jpg" alt="error-img" style='height:40%;width:40%; position:sticky; margin-left:320px;' />
 
-    </body>
+</body>

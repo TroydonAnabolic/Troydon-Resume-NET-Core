@@ -8,7 +8,7 @@
     <title>Troydon | Resume</title>
     <link href="https://fonts.googleapis.com/css?family=Fresca|Saira+Semi+Condensed:400,500&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="~/css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
@@ -16,18 +16,31 @@
 <body>
     <!-- // Intro -->
     <header id="about">
-        <a href="downloadable_files/TroydonCV_IT_2019.docx" class="btn download" download="Troydon's Resume">
+        <a href="~/downloadable_files/TroydonCV_IT_2019.docx" class="btn download" download="Troydon's Resume">
             Download
             Resume
         </a>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#work">Work Experience</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-        </nav>
+
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+                <a class="navbar-brand" href="#">Home</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Work Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work">Work Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+       
         <div class="content-wrap">
-            <img src="images/profile-pic.jpg" alt="Troydon's picture" class="profile-pic col-narrow">
+            <img src="~/images/profile-pic.jpg" alt="Troydon's picture" class="profile-pic col-narrow">
             <div class="col-wide">
                 <h1>Troydon Luicien</h1>
                 <h2 id="main-title">Web Programmer Learner</h2>
@@ -57,7 +70,8 @@
                         <li>Basic MS Word, MS Excel, MS Power Point</li>
                     </ul>
                 </div>
-                <p>Follow this <a href="work-samples.html">link</a> to see my work samples.</p>
+                <p>Follow this <a href="~/work-samples.html">link</a> to see my work samples.</p>
+            </div>
             </div>
     </header>
 
@@ -159,35 +173,7 @@
         </section>
     </main>
 
-    <!-- // Footer & contact info -->
-    <footer>
-        <div class="content-wrap" id="contact">
-            <h2>Let's Keep in Touch!</h2>
 
-            <!-- Social media and contact links. Add or remove any networks. -->
-            <div class="contact-info">
-                <a href="mailto:tluicien@yahoo.co.nz">
-                    <i class="fas fa-envelope-square" aria-hidden="true"></i><span class="sr-only">tluicien@yahoo.co.nz</span>
-                </a>
-                <a href="http://troydonfitness.com.au" target="_blank">
-                    <i class="fas fa-dumbbell"
-                       aria-hidden="true"></i><span class="sr-only">Troydon Fitness</span>
-                </a>
-                <a href="#" target="_blank">
-                    <i class="fab fa-twitter-square" aria-hidden="true"></i><span class="sr-only">Twitter</span>
-                </a>
-                <a href="https://www.linkedin.com/in/troydon-luicien-6127a762/" target="_blank">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
-                </a>
-                <a href="https://www.facebook.com/TroydonAnabolicish" target="_blank">
-                    <i class="fab fa-facebook-square"
-                       aria-hidden="true"></i><span class="sr-only">FaceBook</span>
-                </a>
-            </div>
-
-            <p>Copyright &copy; 2019 by Troydon Luicien</p>
-        </div>
-    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

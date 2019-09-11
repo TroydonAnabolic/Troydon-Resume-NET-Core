@@ -48,11 +48,12 @@ body {
   margin-bottom: 60px;
 }
 
-/*body {
+body {
     background-image: url("~/images/error-img.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}*/
+    background-color: blue;
+}
 
 
 .footer {

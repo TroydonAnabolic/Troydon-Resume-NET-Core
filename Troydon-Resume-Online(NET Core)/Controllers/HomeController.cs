@@ -20,6 +20,11 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             return View();
         }
 
+        public IActionResult Resume()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -16,7 +16,10 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
 
-    <link href="~/css/site.css" rel="stylesheet" />
+
+    <link href="~/css/error.css" rel="stylesheet" />
+    <link href="@Url.Content("~/css/error.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", false)
 
 </head>
 <body style='background-image: url("../../wwwroot/images/error-img.jpg"); background-color: #EDF2F4;'>

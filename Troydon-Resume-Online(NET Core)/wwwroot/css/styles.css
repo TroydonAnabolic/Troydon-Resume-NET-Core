@@ -13,7 +13,7 @@ Global Styles
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
     box-sizing: border-box;
-  }
+}
   *, *:before, *:after {
     box-sizing: inherit;
     
@@ -22,6 +22,7 @@ body {
     font-family: 'Saira Semi Condensed', sans-serif;
     margin: 0;
     background: black;
+
 }
 h1,h2 {
     font-family: 'Fresca', sans-serif;
@@ -62,7 +63,6 @@ Header and footer
 
 header, footer {
     background: #1b114f;
-    background-color: 0.5;
     color: #8D99AE;
 }
 /*header*/
@@ -84,7 +84,10 @@ header h1, header h2 {
 }
 /*footer*/
 footer {
+    position: fixed;
     text-align: center;
+    width: 100%;
+    bottom: 0px;
 }
 .contact-info a {
 
@@ -107,7 +110,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-}
+}   
 nav a {
     display: inline-block;
     padding: 15px 20px;
@@ -117,12 +120,11 @@ nav a {
     
     margin: 0;
 }
-nav a:hover {
-    background: rgb(52, 164, 230);
-    border-style: groove;
-    border-color: rgb(15, 66, 207);
-
-}
+    nav a:hover {
+        background: rgb(52, 164, 230);
+        border-style: none;
+        border-color: rgb(15, 66, 207);
+    }
 
 i.fas, i.fab {
     opacity: 0.4;

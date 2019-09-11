@@ -4,39 +4,10 @@ Code to render specific style into one razor page
     <link href="@Url.Content("~/Styles/view_specific_style.css")" rel="stylesheet" type="text/css" />
 }
 
-[Route("create")]
-public IActionResult Create()
+var comment = new Comment
 {
-	return View();
-}
-
-<Project Sdk="Microsoft.NET.Sdk.Web">
-
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-  </PropertyGroup>
-
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-  </ItemGroup>
-
-</Project>
-
-
-@{
-    ViewData["Title"] = "Comments Page";
-}
-
-<body>
-    <div class="text-center">
-
-        <h1>@Model.Title</h1>
-
-        <p>Posted <span>@Model.Commented</span> by </p> <span>@Model.Person</span>
-
-        <p>@Model.Body</p>
-    </div>
-</body>
+	Title = "My profile comment",
+	Commented = DateTime.Now,
+	Person = "Troydon Luicien",
+	Body = "This is great website, do you not think so?"	
+};

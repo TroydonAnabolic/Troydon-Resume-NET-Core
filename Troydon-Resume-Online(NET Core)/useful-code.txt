@@ -1,0 +1,5 @@
+Code to render specific style into one razor page
+
+@section Styles {
+    <link href="@Url.Content("~/Styles/view_specific_style.css")" rel="stylesheet" type="text/css" />
+}

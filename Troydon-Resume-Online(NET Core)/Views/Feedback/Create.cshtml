@@ -1,0 +1,29 @@
+﻿@model Troydon_Resume_Online_NET_Core_.Models.Comment
+@{
+    ViewData["Title"] = "Create Page";
+}
+
+<h1>Post your Feedback</h1>
+
+<section>
+
+    @using (Html.BeginForm())
+    {
+
+    <p>
+        @Html.LabelFor(x => x.Title)
+        @Html.EditorFor(x => x.Title)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Body)
+        @Html.TextAreaFor(x => x.Body)
+    </p>
+
+    <p>
+        <button type="submit">Post Comment</button>
+    </p>
+
+    }
+
+</section>

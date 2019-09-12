@@ -33,5 +33,11 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
 
             return View(comment);
         }
+
+        [Route("create")]
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }

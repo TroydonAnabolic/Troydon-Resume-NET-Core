@@ -34,9 +34,19 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             return View(comment);
         }
 
-        [Route("create")]
+        [HttpGet, Route("create")]
         public IActionResult Create()
         {
+            return View();
+        }
+
+        [HttpPost, Route("create")]
+        public IActionResult Create(Comment comment)
+        {
+            // override fields that the user submitted
+            comment.Person = User.Identity.Name;
+            comment.Commented = DateTime.Now;
+
             return View();
         }
     }

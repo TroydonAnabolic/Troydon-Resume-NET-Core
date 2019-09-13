@@ -9,15 +9,17 @@
 
     @using (Html.BeginForm())
     {
-
+        @Html.ValidationSummary()
         <p>
             @Html.LabelFor(x => x.Title)
             @Html.EditorFor(x => x.Title)
+            @Html.ValidationMessageFor(x => x.Title)
         </p>
 
         <p>
             @Html.LabelFor(x => x.Body)
-            @Html.TextAreaFor(x => x.Body)
+            @Html.EditorFor(x => x.Body)
+            @Html.ValidationMessageFor(x => x.Body)
         </p>
 
         <p>
@@ -32,6 +34,7 @@
             8 @Html.RadioButtonFor(x => x.Rate, "8")
             9 @Html.RadioButtonFor(x => x.Rate, "9")
             10 @Html.RadioButtonFor(x => x.Rate, "10")
+            @Html.ValidationMessageFor(x => x.Rate)
         </p>
 
         <p>
@@ -39,6 +42,8 @@
             Professor @Html.RadioButtonFor(x => x.Position, "Professor")
             Teacher @Html.RadioButtonFor(x => x.Position, "Teacher")
             Student @Html.RadioButtonFor(x => x.Position, "Student")
+            Other @Html.RadioButtonFor(x => x.Position, "Other")
+            @Html.ValidationMessageFor(x => x.Position)
         </p>
 
         <p>

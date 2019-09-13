@@ -183,3 +183,22 @@ Media Queries
         bottom: 0;
     }
 }
+
+/*
+Error Messages
+=============================*/
+.error, .field-validation-error, .validation-summary-errors {
+    color: red;
+    font-weight: bold;
+}
+
+.field-validation-error {
+    display: block;
+}
+.input-validation-error {
+    /*TO DO*/
+}
+
+.validation-summary-errors {
+    /*TO DO*/
+}

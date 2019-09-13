@@ -43,6 +43,12 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
         [HttpPost, Route("create")]
         public IActionResult Create(Comment comment)
         {
+            // If not valid return back to view, else process request
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             // override fields that the user submitted
             comment.Person = User.Identity.Name;
             comment.Commented = DateTime.Now;

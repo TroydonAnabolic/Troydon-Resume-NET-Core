@@ -1,0 +1,56 @@
+﻿@model Troydon_Resume_Online_NET_Core_.Models.Comment
+@{
+    ViewData["Title"] = "Create Page";
+}
+
+<h1>Post your Feedback</h1>
+
+<section>
+
+    <form asp-action="Create" asp-controller="Feedback">
+
+            <div asp-validation-summary="ModelOnly" class="input-validation-error"></div>
+            <p>
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" placeholder="Feedback Title" />
+                <span asp-validation-for="Title"></span>
+            </p>
+
+            <p>
+                <label asp-for="Body"></label>
+                <textarea asp-for="Body" class="form-control" placeholder="Comment content" ></textarea>
+                @Html.ValidationMessageFor(x => x.Body)
+                <span asp-validation-for="Body"></span>
+            </p>
+
+            <p>
+                @Html.LabelFor(x => x.Rate) :
+                1 @Html.RadioButtonFor(x => x.Rate, "1")
+                2 @Html.RadioButtonFor(x => x.Rate, "2")
+                3 @Html.RadioButtonFor(x => x.Rate, "3")
+                4 @Html.RadioButtonFor(x => x.Rate, "4")
+                5 @Html.RadioButtonFor(x => x.Rate, "5")
+                6 @Html.RadioButtonFor(x => x.Rate, "6")
+                7 @Html.RadioButtonFor(x => x.Rate, "7")
+                8 @Html.RadioButtonFor(x => x.Rate, "8")
+                9 @Html.RadioButtonFor(x => x.Rate, "9")
+                10 @Html.RadioButtonFor(x => x.Rate, "10")
+                @Html.ValidationMessageFor(x => x.Rate)
+            </p>
+
+            <p>
+                @Html.LabelFor(x => x.Position) :
+                Professor @Html.RadioButtonFor(x => x.Position, "Professor")
+                Teacher @Html.RadioButtonFor(x => x.Position, "Teacher")
+                Student @Html.RadioButtonFor(x => x.Position, "Student")
+                Other @Html.RadioButtonFor(x => x.Position, "Other")
+                @Html.ValidationMessageFor(x => x.Position)
+            </p>
+
+            <p>
+                <button type="submit">Post Comment</button>
+            </p>
+
+        </form>
+
+</section>

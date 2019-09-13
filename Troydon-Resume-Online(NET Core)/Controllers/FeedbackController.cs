@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Troydon_Resume_Online_NET_Core_.Models;
 
 namespace Troydon_Resume_Online_NET_Core_.Controllers
 {
@@ -17,16 +18,42 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             return new ContentResult { Content = "My CV Site feedback" };
         }
 
-        // TODO: Remove test values
+        // https://localhost:44348/Feedback/2019/September
         [Route("{year:min(2019)}/{month?}/{day:range(1,31)?}/{key?}")]
         //POST
         public IActionResult Comment(int year, string month, int day, string key)
         {
-            return new ContentResult
+            var comment = new Comment
             {
-                Content = string.Format("Year: {0} Month: {1} Day: {2} Key: {3}",
-                                        year, month, day, key )
+                Title = "My Feedback",
+                Commented = DateTime.Now,
+                Person = "Troydon",
+                Body = "This is a great website, right?",
             };
+
+            return View(comment);
+        }
+
+        [HttpGet, Route("create")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost, Route("create")]
+        public IActionResult Create(Comment comment)
+        {
+            // If not valid return back to view, else process request
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            // override fields that the user submitted
+            comment.Person = User.Identity.Name;
+            comment.Commented = DateTime.Now;
+
+            return View();
         }
     }
 }

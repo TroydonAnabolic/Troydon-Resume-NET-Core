@@ -21,8 +21,7 @@ html {
 body {
     font-family: 'Saira Semi Condensed', sans-serif;
     margin: 0;
-    background: black;
-
+    background-color: #EDF2F4;
 }
 h1,h2 {
     font-family: 'Fresca', sans-serif;
@@ -183,4 +182,23 @@ Media Queries
         position: relative;
         bottom: 0;
     }
+}
+
+/*
+Error Messages
+=============================*/
+.error, .field-validation-error, .validation-summary-errors {
+    color: red;
+    font-weight: bold;
+}
+
+.field-validation-error {
+    display: block;
+}
+.input-validation-error {
+    /*TO DO*/
+}
+
+.validation-summary-errors {
+    /*TO DO*/
 }

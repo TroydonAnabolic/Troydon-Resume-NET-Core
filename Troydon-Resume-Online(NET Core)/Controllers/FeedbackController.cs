@@ -22,7 +22,10 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            return new ContentResult { Content = "My CV Site feedback" };
+            // Return the first 5 comments on the comments page
+            var comments = _db.Comments.OrderByDescending(x => x.Commented).Take(5).ToArray();
+
+            return View(comments);
         }
 
         // https://localhost:44348/Feedback/2019/September
@@ -30,13 +33,7 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
         //POST
         public IActionResult Comment(int year, string month, int day, string key)
         {
-            var comment = new Comment
-            {
-                Title = "My Feedback",
-                Commented = DateTime.Now,
-                Person = "Troydon",
-                Body = "This is a great website, right?",
-            };
+            var comment = _db.Comments.FirstOrDefault(x => x.Key == key);
 
             return View(comment);
         }

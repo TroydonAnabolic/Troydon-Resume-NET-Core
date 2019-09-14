@@ -11,6 +11,13 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
     [Route("feedback")]
     public class FeedbackController : Controller
     {
+        private readonly FeedbackDataContext _db;
+
+        public FeedbackController(FeedbackDataContext db)
+        {
+            _db = db;
+        }
+
         //GET: /<controllers>/
         [Route("")]
         public IActionResult Index()
@@ -52,6 +59,10 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             // override fields that the user submitted
             comment.Person = User.Identity.Name;
             comment.Commented = DateTime.Now;
+
+            // Save to the database
+            _db.Comments.Add(comment);
+            _db.SaveChanges();
 
             return View();
         }

@@ -8,7 +8,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
 namespace Troydon_Resume_Online_NET_Core_.Controllers
 {
     // Class Starts with localhost:XXXX/feedback
-    [Route("feedback")]
+    [Route("Feedback")]
     public class FeedbackController : Controller
     {
         private readonly FeedbackDataContext _db;
@@ -29,7 +29,7 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
         }
 
         // https://localhost:44348/Feedback/2019/September
-        [Route("{year:min(2019)}/{month?}/{day:range(1,31)?}/{key?}")]
+        [Route("{year:min(2019)}/{month:range(1,12)?}/{key?}")]
         //POST
         public IActionResult Comment(int year, string month, int day, string key)
         {
@@ -61,7 +61,13 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             _db.Comments.Add(comment);
             _db.SaveChanges();
 
-            return View();
+            // Redirect to newly created comment.
+            return RedirectToAction("Comment", "Feedback", new
+            {
+                year = comment.Commented.Year,
+                month = comment.Commented.Month,
+                key = comment.Key
+            });
         }
     }
 }

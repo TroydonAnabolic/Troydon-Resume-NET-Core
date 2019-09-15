@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Troydon_Resume_Online_NET_Core_.Models.Comment>
+@{
+    ViewData["Title"] = "Comments";
+}
+
+    <h1>Feedback</h1>
+
+<p>
+    Below are the latest comments from our reviewers
+</p>
+
+<div class="content-wrap">
+    @foreach (var comment in Model)
+    {
+        <article class="content-wrap">
+            <h1>
+                @Html.ActionLink(comment.Title, "Comment", "Feedback",
+                    new { year = comment.Commented.Year, month = comment.Commented.Month, key = comment.Key }
+                )
+            </h1>
+            <div class="details">
+                Posted <span> @comment.Commented</span> by <span>@comment.Person</span>
+            </div>
+            <div class="content">
+                @comment.Body
+                <br /><br />
+                <p>
+                    Rating Given: @comment.Rate
+                </p>
+                <p>
+                    Position Held: @comment.Position
+                </p>
+            </div>
+        </article>
+    }
+</div>

@@ -8,28 +8,32 @@ using Troydon_Resume_Online_NET_Core_.Models;
 namespace Troydon_Resume_Online_NET_Core_.Controllers
 {
     // Class Starts with localhost:XXXX/feedback
-    [Route("feedback")]
+    [Route("Feedback")]
     public class FeedbackController : Controller
     {
+        private readonly FeedbackDataContext _db;
+
+        public FeedbackController(FeedbackDataContext db)
+        {
+            _db = db;
+        }
+
         //GET: /<controllers>/
         [Route("")]
         public IActionResult Index()
         {
-            return new ContentResult { Content = "My CV Site feedback" };
+            // Return the first 5 comments on the comments page
+            var comments = _db.Comments.OrderByDescending(x => x.Commented).Take(5).ToArray();
+
+            return View(comments);
         }
 
         // https://localhost:44348/Feedback/2019/September
-        [Route("{year:min(2019)}/{month?}/{day:range(1,31)?}/{key?}")]
+        [Route("{year:min(2019)}/{month:range(1,12)?}/{key?}")]
         //POST
         public IActionResult Comment(int year, string month, int day, string key)
         {
-            var comment = new Comment
-            {
-                Title = "My Feedback",
-                Commented = DateTime.Now,
-                Person = "Troydon",
-                Body = "This is a great website, right?",
-            };
+            var comment = _db.Comments.FirstOrDefault(x => x.Key == key);
 
             return View(comment);
         }
@@ -53,7 +57,17 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             comment.Person = User.Identity.Name;
             comment.Commented = DateTime.Now;
 
-            return View();
+            // Save to the database
+            _db.Comments.Add(comment);
+            _db.SaveChanges();
+
+            // Redirect to newly created comment.
+            return RedirectToAction("Comment", "Feedback", new
+            {
+                year = comment.Commented.Year,
+                month = comment.Commented.Month,
+                key = comment.Key
+            });
         }
     }
 }

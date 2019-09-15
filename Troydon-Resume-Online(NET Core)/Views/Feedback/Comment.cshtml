@@ -7,7 +7,14 @@
 <h1>@Model.Title</h1>
 <div class="content-wrap">
     Posted <span>@Model.Commented</span> by <span>@Model.Person</span>
-                                            <p>
-                                                @Model.Body
-                                            </p>
+    <p>
+        @Model.Body
+    </p>
+    <br /><br />
+    <p>
+        Rating Given: @Model.Rate
+    </p>
+    <p>
+        Position Held: @Model.Position
+    </p>
 </div>

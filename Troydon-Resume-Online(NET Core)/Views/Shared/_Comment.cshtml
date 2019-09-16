@@ -1,0 +1,22 @@
+﻿@model Troydon_Resume_Online_NET_Core_.Models.Comment
+@inject Troydon_Resume_Online_NET_Core_.Models.FormattingService Format
+@{
+    ViewData["Title"] = "All Comments";
+}
+
+<h1>@Model.Title</h1>
+<div class="content-wrap">
+    Posted <span>@Format.AsReadableDate(Model.Commented)</span> by <span>@Model.Person</span>
+    <p>
+        @Model.Body
+    </p>
+    <br /><br />
+    <p>
+        Rating Given: @Model.Rate
+    </p>
+    <p>
+        Position Held: @Model.Position
+    </p>
+</div>
+
+ @*TO DO: Create another partial view*@

@@ -41,6 +41,8 @@ namespace Troydon_Resume_Online_NET_Core_
                 var connectionString = Configuration.GetConnectionString("FeedbackDataContext");
                 options.UseSqlServer(connectionString);
             });
+
+            services.AddTransient<FormattingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

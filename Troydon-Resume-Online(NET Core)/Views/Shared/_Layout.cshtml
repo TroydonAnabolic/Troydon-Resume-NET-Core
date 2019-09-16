@@ -31,7 +31,9 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        @*<li>@Html.ActionLink("Home", "Index", "Home", null, new { title = "Go Home" }))</li>*@
+                        @*<li> alternate link method
+                            @Html.ActionLink("Home", "Index", "Home", null, new { title = "Go Home" }))
+                            </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -42,8 +44,11 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Resume">Resume</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Feedback" asp-action="Comment">Comments</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Feedback" asp-action="Index">Comments</a>
                         </li>
+                        @*<li> alternate link method
+                        <a class="nav-link text-light" href="@Url.Action("Index", "Feedback")" title="Commets page!">Comments</a>
+                        </li>*@
                     </ul>
                 </div>
             </div>

@@ -66,19 +66,20 @@
             }
             else
             {
-            <div class="content-wrap">
                 <aside id="secondary" class="float-right">
-                    <div id="specials" class="text-center">
+                    <div class="text-center .bg-secondary">
 
                         <vc:news-highlights />
                         @* Register View Component page *@
                         @await Component.InvokeAsync("NewsHighlights", new { maxPriority = 1, isDone = true });
                     </div>
                 </aside>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum, enim porta pulvinar sollicitudin, velit elit sodales turpis, ac tincidunt est leo in massa. Proin eu nisl vel nisi porttitor iaculis. Proin sed ornare eros, in consectetur neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut tristique tellus eros, nec sollicitudin enim mattis vitae. Pellentesque dolor odio, hendrerit ac velit id, pulvinar ultricies odio. Aliquam quis nisi elit. Aenean molestie purus suscipit pulvinar accumsan. Aliquam tellus metus, elementum et blandit ac, varius a diam. Aliquam lorem nisi, commodo at vulputate eu, vulputate eget ligula. Etiam orci orci, venenatis eget sapien facilisis, faucibus rhoncus dolor. Mauris suscipit massa eget tellus mollis, ac molestie massa interdum. Quisque nec felis tristique, sagittis urna non, maximus nisi. Nulla facilisi. In orci justo, tempus lacinia dui pulvinar, aliquam finibus velit. Phasellus sit amet vestibulum justo. </p>
+                <div class="content-wrap">
 
-                <p>Curabitur sed urna luctus, lobortis orci a, porta tortor. Morbi maximus ut quam nec bibendum. Curabitur maximus ipsum arcu. Nulla fermentum, tortor at suscipit consectetur, libero lectus congue eros, eget porttitor nulla odio in lorem. Vestibulum porttitor ut ante at bibendum. Donec vitae ante quis lectus dictum mollis at id ligula. Pellentesque et ligula nulla. Integer ac sodales orci. Praesent ac pulvinar lectus, nec convallis nulla. Maecenas urna lorem, imperdiet in leo sit amet, varius convallis metus. Mauris quis feugiat libero. Donec mi odio, laoreet nec aliquam sed, aliquam id diam. Nam scelerisque sodales felis ac elementum. Nullam et pulvinar leo, eu maximus diam. </p>
-            </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum, enim porta pulvinar sollicitudin, velit elit sodales turpis, ac tincidunt est leo in massa. Proin eu nisl vel nisi porttitor iaculis. Proin sed ornare eros, in consectetur neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut tristique tellus eros, nec sollicitudin enim mattis vitae. Pellentesque dolor odio, hendrerit ac velit id, pulvinar ultricies odio. Aliquam quis nisi elit. Aenean molestie purus suscipit pulvinar accumsan. Aliquam tellus metus, elementum et blandit ac, varius a diam. Aliquam lorem nisi, commodo at vulputate eu, vulputate eget ligula. Etiam orci orci, venenatis eget sapien facilisis, faucibus rhoncus dolor. Mauris suscipit massa eget tellus mollis, ac molestie massa interdum. Quisque nec felis tristique, sagittis urna non, maximus nisi. Nulla facilisi. In orci justo, tempus lacinia dui pulvinar, aliquam finibus velit. Phasellus sit amet vestibulum justo. </p>
+
+                    <p>Curabitur sed urna luctus, lobortis orci a, porta tortor. Morbi maximus ut quam nec bibendum. Curabitur maximus ipsum arcu. Nulla fermentum, tortor at suscipit consectetur, libero lectus congue eros, eget porttitor nulla odio in lorem. Vestibulum porttitor ut ante at bibendum. Donec vitae ante quis lectus dictum mollis at id ligula. Pellentesque et ligula nulla. Integer ac sodales orci. Praesent ac pulvinar lectus, nec convallis nulla. Maecenas urna lorem, imperdiet in leo sit amet, varius convallis metus. Mauris quis feugiat libero. Donec mi odio, laoreet nec aliquam sed, aliquam id diam. Nam scelerisque sodales felis ac elementum. Nullam et pulvinar leo, eu maximus diam. </p>
+                </div>
             }
 
 

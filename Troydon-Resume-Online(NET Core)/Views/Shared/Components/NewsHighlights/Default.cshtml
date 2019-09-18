@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Troydon_Resume_Online_NET_Core_.Models.NewsHighlight>
+
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">
+            News Highlights
+        </button>
+        @foreach (var news in Model)
+        {
+    <a href="~/external/@(news.Key).html">
+        <p class="list-group-item-text">
+            
+            <img src="~/images/@(news.Key).jpg" alt="@news.Name" width="75" height="75">
+            @news.Name
+
+            @*//TO DO : make external sample site data*@
+
+            @news.Name <br>$@news.Price
+            </p>
+    </a>
+
+
+        }
+    </div>
+
+
+
+@*<div class="list-group">
+    <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading">First List Group Item Heading</h4>
+        ist Group Item Text</p>
+    </a>
+
+
+
+    <a href="#" class="list-group-item">
+        <h4 class="list-group-item-heading">Second List Group Item Heading</h4>
+        <p class="list-group-item-text">List Group Item Text</p>
+    </a>
+    <a href="#" class="list-group-item">
+        <h4 class="list-group-item-heading">Third List Group Item Heading</h4>
+        <p class="list-group-item-text">List Group Item Text</p>
+    </a>
+</div>*@ 

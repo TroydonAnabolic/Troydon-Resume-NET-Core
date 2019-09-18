@@ -65,3 +65,4 @@ C:\Users\troyi\Documents\Troydon\IT_Projects\Troydon-Resume-NET-Core\Troydon-Res
 C:\Users\troyi\Documents\Troydon\IT_Projects\Troydon-Resume-NET-Core\Troydon-Resume-Online(NET Core)\obj\Debug\netcoreapp2.2\Razor\Views\Feedback\Create.g.cshtml.cs
 C:\Users\troyi\Documents\Troydon\IT_Projects\Troydon-Resume-NET-Core\Troydon-Resume-Online(NET Core)\obj\Debug\netcoreapp2.2\Razor\Views\Feedback\Index.g.cshtml.cs
 C:\Users\troyi\Documents\Troydon\IT_Projects\Troydon-Resume-NET-Core\Troydon-Resume-Online(NET Core)\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Comment.g.cshtml.cs
+C:\Users\troyi\Documents\Troydon\IT_Projects\Troydon-Resume-NET-Core\Troydon-Resume-Online(NET Core)\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\NewsHighlights\Default.g.cshtml.cs

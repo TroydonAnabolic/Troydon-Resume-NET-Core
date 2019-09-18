@@ -56,6 +56,11 @@ a:hover {
     padding: 10px;
     display: inline-block;
 }
+
+.secondary {
+    padding: 20px;
+    margin: 20px;
+}
 /*
 Header and footer
 =============================*/

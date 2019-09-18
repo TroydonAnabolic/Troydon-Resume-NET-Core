@@ -4,7 +4,8 @@ Color Palette
 #8D99AE - light blue
 #EDF2F4 - blue/white
 rgb(52, 164, 230) - light blue button
-#color: rgb(15, 66, 207) - a dark blue
+#6495ED - cornflower blue
+#F0F8FF - Alice blue
 =============================*/
 
 /*
@@ -57,25 +58,30 @@ a:hover {
     display: inline-block;
 }
 
-.secondary {
-    margin-top: 1em;
-    text-align: right;
-    background: blue;
+/*
+View component
+=============================*/
+#secondary {
+    margin-top: 4em;
+    
+    /*
+    
     line-height: 10px;
     float: right;
-    margin-top: 150px;
     width: 200px;
     padding-right: 25px;
     padding-top: 0;
     margin: auto;
     padding-top: 2em;
-    border-top: 2px solid #999;
+    border-top: 2px solid #999;*/
 }
 
+.list-group-item {
+    background-color: #6495ED;
+}
 /*
 Header and footer
 =============================*/
-
 header, footer {
     background: #1b114f;
     color: #8D99AE;
@@ -141,6 +147,38 @@ nav a {
 i.fas, i.fab {
     opacity: 0.4;
   }
+
+
+.paging {
+
+    height: 2em;
+    clear: both;
+}
+
+    .paging .prev {
+        float: left;
+    }
+
+    .paging .next {
+        float: right;
+    }
+
+.next{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ADD8E6;
+    width: 4.5em;
+    height: 2em;
+    text-align:center;
+}
+.prev {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ADD8E6;
+    width: 6em;
+    height: 2em;
+    text-align: center;
+}
 
 /*
 Work Experience

@@ -11,3 +11,8 @@ To stop tracking the files in the ignore file open a command prompt and navigate
 git rm -r --cached . 
 git add .
 git commit -am "Remove ignored files"
+
+
+TODO:
+add 1 more view component
+add more page navigation, with search bar to look for data

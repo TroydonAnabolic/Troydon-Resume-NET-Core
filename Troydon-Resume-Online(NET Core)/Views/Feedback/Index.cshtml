@@ -10,7 +10,7 @@
 </p>
 
 @*functionality to navigate page and view blog posts*@
-<p class="pager">
+<p class="paging">
     @if (ViewBag.HasPreviousPage)
     {
         <a class="prev" href="@Url.Action("Index", "Feedback" , new { page = ViewBag.PreviousPage })">

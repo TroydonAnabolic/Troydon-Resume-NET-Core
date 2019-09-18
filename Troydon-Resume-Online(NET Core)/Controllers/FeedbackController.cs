@@ -20,10 +20,30 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
 
         //GET: /<controllers>/
         [Route("")]
-        public IActionResult Index()
+        public IActionResult Index(int page = 0)
         {
-            // Return the first 5 comments on the comments page
-            var comments = _db.Comments.OrderByDescending(x => x.Commented).Take(5).ToArray();
+
+            var pageSize = 2;
+            var totalPosts = _db.Comments.Count();
+            var totalPages = totalPosts / pageSize;
+            var previousPage = page - 1;
+            var nextPage = page + 1;
+
+            ViewBag.PreviousPage = previousPage;
+            ViewBag.HasPreviousPage = previousPage >= 0;
+            ViewBag.NextPage = nextPage;
+            ViewBag.HasNextPage = nextPage < totalPages;
+
+            var comments =
+                _db.Comments
+                    .OrderByDescending(x => x.Commented)
+                    .Skip(pageSize * page)
+                    .Take(pageSize)
+                    .ToArray();
+
+            //returns only partial view which means only part of the page will load when the next and previous buttons clicked
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                return PartialView(comments);
 
             return View(comments);
         }

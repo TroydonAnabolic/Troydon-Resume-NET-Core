@@ -3,34 +3,32 @@
     ViewData["Title"] = "Comments";
 }
 
-    <h1>Feedback</h1>
+<h1>Feedback</h1>
 
 <p>
     Below are the latest comments from our reviewers
 </p>
 
+@*functionality to navigate page and view blog posts*@
+<p class="paging">
+    @if (ViewBag.HasPreviousPage)
+    {
+        <a class="prev" href="@Url.Action("Index", "Feedback" , new { page = ViewBag.PreviousPage })">
+            &lt; Previous
+        </a>
+    }
+
+    @if (ViewBag.HasNextPage)
+    {
+        <a class="next" href="@Url.Action("Index", "Feedback" , new { page = ViewBag.NextPage })">
+            Next &gt;
+        </a>
+    }
+</p>
+
 <div class="content-wrap">
     @foreach (var comment in Model)
     {
-        <article class="content-wrap">
-            <h1>
-                @Html.ActionLink(comment.Title, "Comment", "Feedback",
-                    new { year = comment.Commented.Year, month = comment.Commented.Month, key = comment.Key }
-                )
-            </h1>
-            <div class="details">
-                Posted <span> @comment.Commented</span> by <span>@comment.Person</span>
-            </div>
-            <div class="content">
-                @comment.Body
-                <br /><br />
-                <p>
-                    Rating Given: @comment.Rate
-                </p>
-                <p>
-                    Position Held: @comment.Position
-                </p>
-            </div>
-        </article>
+        @await Html.PartialAsync("Comment", comment)
     }
 </div>

@@ -12,6 +12,9 @@ git rm -r --cached .
 git add .
 git commit -am "Remove ignored files"
 
+Troydon-Resume-Online(NET Core) being used in migrations builder resolved the error as the file name for project was this initially
+and was automatically changed to Troydon_Resume_Online_NET_Core_ by default by VS
+
 
 TODO:
 add 1 more view component

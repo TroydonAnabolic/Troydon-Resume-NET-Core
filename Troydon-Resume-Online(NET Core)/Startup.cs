@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Troydon_Resume_Online_NET_Core_.Models;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Troydon_Resume_Online_NET_Core_
 {
@@ -41,6 +43,18 @@ namespace Troydon_Resume_Online_NET_Core_
                 var connectionString = Configuration.GetConnectionString("FeedbackDataContext");
                 options.UseSqlServer(connectionString);
             });
+
+            // Add Identity Services
+            services.AddDbContext<IdentityDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString
+                    ("IdentityDataContext"),
+                optionsBuilders =>
+                optionsBuilders.MigrationsAssembly("Troydon-Resume-Online(NET Core)")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<IdentityDbContext>()
+            // Tokens for generating pass a two-factor auth
+            .AddDefaultTokenProviders();
 
             services.AddTransient<FormattingService>();
         }

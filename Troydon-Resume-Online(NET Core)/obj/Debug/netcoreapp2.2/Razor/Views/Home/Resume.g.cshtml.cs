@@ -23,8 +23,18 @@ using Troydon_Resume_Online_NET_Core_.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\troyi\Documents\Troydon\IT_Projects\Troydon-Resume-NET-Core\Troydon-Resume-Online(NET Core)\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#line 4 "C:\Users\troyi\Documents\Troydon\IT_Projects\Troydon-Resume-NET-Core\Troydon-Resume-Online(NET Core)\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"70eb7d73ee0c0ce70f241247a26f97e6dd1e8f47", @"/Views/Home/Resume.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6621b2e5d0ae229745ca98cc0f0a1950c6981df4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"45cf9056a167fbc49c05f2d98fd8222c61fe2e7f", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Resume : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rel", new global::Microsoft.AspNetCore.Html.HtmlString("stylesheet"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -64,7 +74,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
             WriteLiteral("\r\n\r\n    ");
             EndContext();
             BeginContext(8, 440, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f476904", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f477338", async() => {
                 BeginContext(14, 374, true);
                 WriteLiteral(@"
         <link href=""https://fonts.googleapis.com/css?family=Fresca|Saira+Semi+Condensed:400,500&display=swap""
@@ -74,7 +84,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
         ");
                 EndContext();
                 BeginContext(388, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f477669", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f478103", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -108,12 +118,12 @@ using Troydon_Resume_Online_NET_Core_.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(452, 7738, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f479807", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f4710241", async() => {
                 BeginContext(458, 58, true);
                 WriteLiteral("\r\n    <!-- // Intro -->\r\n    <header id=\"about\">\r\n        ");
                 EndContext();
                 BeginContext(516, 159, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f4710252", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f4710687", async() => {
                     BeginContext(619, 52, true);
                     WriteLiteral("\r\n            Download\r\n            Resume\r\n        ");
                     EndContext();
@@ -157,7 +167,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
             ");
                 EndContext();
                 BeginContext(1466, 91, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f4712678", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f4713113", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -208,7 +218,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
                 <p>Follow this ");
                 EndContext();
                 BeginContext(3158, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f4715741", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70eb7d73ee0c0ce70f241247a26f97e6dd1e8f4716176", async() => {
                     BeginContext(3188, 4, true);
                     WriteLiteral("link");
                     EndContext();
@@ -358,6 +368,8 @@ using Troydon_Resume_Online_NET_Core_.Models;
             EndContext();
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public SignInManager<IdentityUser> SignInManager { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

@@ -19,3 +19,4 @@ and was automatically changed to Troydon_Resume_Online_NET_Core_ by default by V
 TODO:
 add 1 more view component
 add more page navigation, with search bar to look for data
+-make page nav a partial view in the shared folder

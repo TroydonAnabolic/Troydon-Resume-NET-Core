@@ -44,7 +44,8 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
                 IdentityUser user = new IdentityUser()
                 {
                     Email = registration.Email,
-                    UserName = registration.Email
+                    UserName = registration.Email,
+                    PhoneNumber= registration.MobileNumber,
                 };
 
                 //if (!string.IsNullOrEmpty(registration.MobileNumber))
@@ -85,12 +86,12 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
         //
         // POST: /Account/Login
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Login(LoginViewModel login, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(login.Email, login.Password, login.RememberMe, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {
                     if (Url.IsLocalUrl(returnUrl))
@@ -99,18 +100,18 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
                     }
                     else
                     {
-                        return RedirectToAction(nameof(FeedbackController.Index), "Coom");
+                        return RedirectToAction(nameof(HomeController.Index), "Home");
                     }
 
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Invalid login details. Please check the details entered and try again");
                 }
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View(login);
         }
 
         //

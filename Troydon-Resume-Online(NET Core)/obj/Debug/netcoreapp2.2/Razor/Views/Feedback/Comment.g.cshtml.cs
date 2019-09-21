@@ -23,8 +23,18 @@ using Troydon_Resume_Online_NET_Core_.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\troyi\Documents\Troydon\IT_Projects\Troydon-Resume-NET-Core\Troydon-Resume-Online(NET Core)\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#line 4 "C:\Users\troyi\Documents\Troydon\IT_Projects\Troydon-Resume-NET-Core\Troydon-Resume-Online(NET Core)\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"94f7bdceda77c7342892e599a32d1641157a884f", @"/Views/Feedback/Comment.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6621b2e5d0ae229745ca98cc0f0a1950c6981df4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"45cf9056a167fbc49c05f2d98fd8222c61fe2e7f", @"/Views/_ViewImports.cshtml")]
     public class Views_Feedback_Comment : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Troydon_Resume_Online_NET_Core_.Models.Comment>
     {
         #pragma warning disable 1998
@@ -51,6 +61,8 @@ Write(await Html.PartialAsync("_Comment"));
             EndContext();
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public SignInManager<IdentityUser> SignInManager { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

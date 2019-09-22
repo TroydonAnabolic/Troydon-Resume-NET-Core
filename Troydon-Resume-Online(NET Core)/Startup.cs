@@ -56,6 +56,8 @@ namespace Troydon_Resume_Online_NET_Core_
             // Tokens for generating pass a two-factor auth
             .AddDefaultTokenProviders();
 
+            // TO DO: Add sign up with LinkedIn/Facebook
+
             services.AddTransient<FormattingService>();
         }
 

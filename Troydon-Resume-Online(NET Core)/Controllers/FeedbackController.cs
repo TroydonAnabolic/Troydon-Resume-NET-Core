@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using Troydon_Resume_Online_NET_Core_.Models;
 namespace Troydon_Resume_Online_NET_Core_.Controllers
 {
     // Class Starts with localhost:XXXX/feedback
+    [Authorize]
     [Route("Feedback")]
     public class FeedbackController : Controller
     {
@@ -19,6 +21,7 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
         }
 
         //GET: /<controllers>/
+        [AllowAnonymous]
         [Route("")]
         public IActionResult Index(int page = 0)
         {

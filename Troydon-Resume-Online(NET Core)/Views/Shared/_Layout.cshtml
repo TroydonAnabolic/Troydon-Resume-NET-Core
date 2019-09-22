@@ -33,20 +33,23 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav ">
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Logout"></a>
-                                <input type="submit" value="Logout" class="Logout" />
-                            </li>
-                            @*</form>*@
-                        }
-                        else
-                        {
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <form id="logout" asp-area="" asp-controller="Account" asp-action="Logout" role="form">
+                                    <input type="submit" value="Logout" class="Logout nav-link text-dark .bg-secondary" />
+                                </form>
+                            }
+                            else
+                            {
+                                @*<form id="logout" asp-area="" asp-controller="Account" asp-action="Login" role="form">
+                                    <input type="submit" value="Logout" class="Login nav-link text-light" />
+                                </form>*@
+                                <a href="@Url.Action("Login", "Account")" title="log in" class="Login nav-link text-light">
+                                    Login
+                                </a>
+                            }
                         </li>
-                        }
                     </ul>
                     <ul class="navbar-nav mr-auto">
                         @*<li> alternate link method
@@ -76,7 +79,7 @@
                         @*<li> alternate link method
                                 <a class="nav-link text-light" href="@Url.Action("Index", "Feedback")" title="Commets page!">Comments</a>
                             </li>*@
-                        
+
                     </ul>
                 </div>
             </div>

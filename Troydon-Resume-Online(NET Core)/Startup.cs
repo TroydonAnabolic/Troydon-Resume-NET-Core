@@ -77,6 +77,8 @@ namespace Troydon_Resume_Online_NET_Core_
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

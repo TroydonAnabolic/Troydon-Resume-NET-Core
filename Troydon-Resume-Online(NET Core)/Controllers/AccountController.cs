@@ -120,8 +120,15 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+
+            //if (string.IsNullOrWhiteSpace(returnUrl))
+            //    return RedirectToAction("Index", "Home");
+
+            //return Content("test");
+
+             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
+
         [HttpGet]
         public IActionResult AccessDenied()
         {

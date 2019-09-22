@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Troydon_Resume_Online_NET_Core_.Models;
 
@@ -14,10 +16,14 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
     public class FeedbackController : Controller
     {
         private readonly FeedbackDataContext _db;
+        private readonly ErrorViewModel _error;
 
-        public FeedbackController(FeedbackDataContext db)
+        public FeedbackController(
+            FeedbackDataContext db,
+            ErrorViewModel error)
         {
             _db = db;
+            _error = error;
         }
 
         //GET: /<controllers>/
@@ -92,5 +98,45 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
                 key = comment.Key
             });
         }
+
+        [HttpGet]
+        public ActionResult Delete(int? id, bool? saveChangesError = false)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
+            }
+            Comment student = _db.Comments.Find(id);
+            if (student == null)
+            {
+                var error = _error.RequestId;
+                return View("Error");
+            }
+            return View(student);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, Comment comment)
+        {
+            try
+            {
+                Comment student = _db.Comments.Find(id);
+                _db.Comments.Remove(comment);
+                _db.SaveChanges();
+            }
+            catch (DataException/* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+            }
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

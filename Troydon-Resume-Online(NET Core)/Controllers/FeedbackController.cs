@@ -16,14 +16,13 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
     public class FeedbackController : Controller
     {
         private readonly FeedbackDataContext _db;
-        private readonly ErrorViewModel _error;
+        //private readonly ErrorViewModel _error; dependency injectio
 
         public FeedbackController(
-            FeedbackDataContext db,
-            ErrorViewModel error)
+            FeedbackDataContext db
+          )
         {
             _db = db;
-            _error = error;
         }
 
         //GET: /<controllers>/
@@ -99,10 +98,16 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             });
         }
 
-        [HttpGet]
-        public ActionResult Delete(int? id, bool? saveChangesError = false)
+
+
+        // TO DO: Add in a way to delete comments, ensure only the user logged in has access.
+        // Also add a way that admin can delete comments from any user
+        // Fix the delete action so it does not encounter an error.(possibly need the create post to create an Id with value
+
+        [HttpGet, Route("delete")]
+        public IActionResult Delete(long? Id, bool? saveChangesError = false)
         {
-            if (id == null)
+            if (Id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -110,29 +115,32 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             {
                 ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
             }
-            Comment student = _db.Comments.Find(id);
-            if (student == null)
+            Comment comment = _db.Comments.Find(Id);
+            if (comment == null)
             {
-                var error = _error.RequestId;
-                return View("Error");
+                return RedirectToAction("Error", "Home");
             }
-            return View(student);
+
+            return View(comment);
         }
 
-        [HttpPost]
+        [HttpPost, Route("delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, Comment comment)
+        public IActionResult Delete(long Id)
         {
             try
             {
-                Comment student = _db.Comments.Find(id);
+                Comment comment = _db.Comments.Find(Id);
+                comment.Person = User.Identity.Name;
+                comment.Commented = DateTime.Now;
+
                 _db.Comments.Remove(comment);
                 _db.SaveChanges();
             }
             catch (DataException/* dex */)
             {
                 //Log the error (uncomment dex variable name and add a line here to write a log.
-                return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+                return RedirectToAction("Delete", new { id = Id, saveChangesError = true });
             }
             return RedirectToAction("Index");
         }

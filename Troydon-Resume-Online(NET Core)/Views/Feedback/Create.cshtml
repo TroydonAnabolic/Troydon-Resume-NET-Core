@@ -9,48 +9,56 @@
 
     <form asp-action="Create" asp-controller="Feedback">
 
+        <p>
+            <label asp-for="Id"></label>
             <div asp-validation-summary="ModelOnly" class="input-validation-error"></div>
-            <p>
-                <label asp-for="Title"></label>
-                <input asp-for="Title" class="form-control" placeholder="Feedback Title" />
-                <span asp-validation-for="Title"></span>
-            </p>
 
-            <p>
-                <label asp-for="Body"></label>
-                <textarea asp-for="Body" class="form-control" placeholder="Comment content" ></textarea>
-                @Html.ValidationMessageFor(x => x.Body)
-                <span asp-validation-for="Body"></span>
-            </p>
 
-            <p>
-                @Html.LabelFor(x => x.Rate) :
-                 @Html.RadioButtonFor(x => x.Rate, "1") 1
-                 @Html.RadioButtonFor(x => x.Rate, "2") 2
-                 @Html.RadioButtonFor(x => x.Rate, "3") 3
-                 @Html.RadioButtonFor(x => x.Rate, "4") 4
-                @Html.RadioButtonFor(x => x.Rate, "5") 5
-                @Html.RadioButtonFor(x => x.Rate, "6") 6
-                @Html.RadioButtonFor(x => x.Rate, "7") 7
-                @Html.RadioButtonFor(x => x.Rate, "8") 8
-                @Html.RadioButtonFor(x => x.Rate, "9") 9
-                @Html.RadioButtonFor(x => x.Rate, "10") 10
-                @Html.ValidationMessageFor(x => x.Rate)
-            </p>
 
-            <p>
-                @Html.LabelFor(x => x.Position) :
-                @Html.RadioButtonFor(x => x.Position, "Professor") Professor
-                @Html.RadioButtonFor(x => x.Position, "Teacher") Teacher
-                @Html.RadioButtonFor(x => x.Position, "Student") Student
-                @Html.RadioButtonFor(x => x.Position, "Other") Other
-                @Html.ValidationMessageFor(x => x.Position)
-            </p>
 
-            <p>
-                <button type="submit">Post Comment</button>
-            </p>
 
-        </form>
+        <p>
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" placeholder="Feedback Title" />
+            <span asp-validation-for="Title"></span>
+        </p>
+
+        <p>
+            <label asp-for="Body"></label>
+            <textarea asp-for="Body" class="form-control" placeholder="Comment content"></textarea>
+            @Html.ValidationMessageFor(x => x.Body)
+            <span asp-validation-for="Body"></span>
+        </p>
+
+        <p>
+            @Html.LabelFor(x => x.Rate) :
+            @Html.RadioButtonFor(x => x.Rate, "1") 1
+            @Html.RadioButtonFor(x => x.Rate, "2") 2
+            @Html.RadioButtonFor(x => x.Rate, "3") 3
+            @Html.RadioButtonFor(x => x.Rate, "4") 4
+            @Html.RadioButtonFor(x => x.Rate, "5") 5
+            @Html.RadioButtonFor(x => x.Rate, "6") 6
+            @Html.RadioButtonFor(x => x.Rate, "7") 7
+            @Html.RadioButtonFor(x => x.Rate, "8") 8
+            @Html.RadioButtonFor(x => x.Rate, "9") 9
+            @Html.RadioButtonFor(x => x.Rate, "10") 10
+            @Html.ValidationMessageFor(x => x.Rate)
+        </p>
+
+        <p>
+            @Html.LabelFor(x => x.Position) :
+            @Html.RadioButtonFor(x => x.Position, "Professor") Professor
+            @Html.RadioButtonFor(x => x.Position, "Teacher") Teacher
+            @Html.RadioButtonFor(x => x.Position, "Student") Student
+            @Html.RadioButtonFor(x => x.Position, "Other") Other
+            @Html.ValidationMessageFor(x => x.Position)
+        </p>
+
+        <p>
+            <button type="submit">Post Comment</button>
+        </p>
+
+        </p>
+    </form>
 
 </section>

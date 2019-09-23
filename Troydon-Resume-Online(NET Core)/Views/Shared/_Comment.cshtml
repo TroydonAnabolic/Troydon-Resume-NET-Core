@@ -4,19 +4,31 @@
     ViewData["Title"] = "All Comments";
 }
 
-<h1>@Model.Title</h1>
+<h3>@Model.Title</h3>
 <div class="content-wrap">
     Posted <span>@Format.AsReadableDate(Model.Commented)</span> by <span>@Model.Person</span>
     <p>
         @Model.Body
     </p>
-    <br /><br />
+
     <p>
         Rating Given: @Model.Rate
     </p>
     <p>
         Position Held: @Model.Position
     </p>
-</div>
 
- @*TO DO: Create another partial view*@
+    @if (SignInManager.IsSignedIn(User))
+    {
+
+        <form asp-action="Delete" asp-controller="Feedback">
+            <p>
+                <button type="submit" class="text-white btn btn-danger">Delete Comment</button>
+            </p>
+        </form>
+    }
+    </div>
+
+
+
+    @*TO DO: Create another partial view*@

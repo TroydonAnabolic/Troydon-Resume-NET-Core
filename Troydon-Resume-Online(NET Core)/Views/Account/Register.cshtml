@@ -45,6 +45,14 @@
         </div>
         <br />
         <div class="form-group">
+            <label asp-for="AdminNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="AdminNumber" class="form-control" />
+                <span asp-validation-for="AdminNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <button type="submit" class="btn btn-default">Register</button>
             </div>

@@ -1,7 +1,6 @@
 ﻿@model ErrorViewModel
 @{
     ViewData["Title"] = "Error";
-    //Layout = "_Layout-Error";
 }
 
 
@@ -10,16 +9,15 @@
 }*@
 
     <body>
-        @section lorem { }
-        <h1 class="text-info text-center">OOPS!</h1>
-        <h2 class="text-info text-center">You broke it! :(</h2>
-        @if (Model.ShowRequestId)
-        {
-            <p class="text-center">
-                <strong>Request ID:</strong> <code>@Model.RequestId</code>
-            </p>
-        }
-
-        <img src="~/images/error-img.jpg" alt="error-img" style='height:40%;width:40%; position:sticky; margin-left:320px;' />
-
+        <div class="bg-error text-center">
+            @section lorem { }
+            <h1 class="text-danger text-right">OOPS!</h1>
+            <h2 class="text-danger text-right">You broke it! :(</h2>
+            @if (Model.ShowRequestId)
+            {
+                <p class="text-right text-white">
+                    <strong>Request ID:</strong> <code class="text-white">@Model.RequestId</code>
+                </p>
+            }
+            </div>
     </body>

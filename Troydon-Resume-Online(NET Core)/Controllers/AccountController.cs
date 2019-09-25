@@ -48,15 +48,15 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
                     PhoneNumber= registration.MobileNumber,
                 };
 
-                //if (!string.IsNullOrEmpty(registration.MobileNumber))
+                //if (!string.IsNullOrEmpty(registration.AdminNumber))
                 //{
                 //    user.Claims.Add(new IdentityUserClaim<string>
                 //    {
                 //        ClaimType = "MobileNumber",
-                //        ClaimValue = registration.MobileNumber
+                //        ClaimValue = registration.AdminNumber
                 //    });
                 //}
-                
+
                 var result = await _userManager.CreateAsync(user, registration.Password);
 
                 if (result.Succeeded)

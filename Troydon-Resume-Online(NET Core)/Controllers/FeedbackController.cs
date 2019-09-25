@@ -98,13 +98,12 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             });
         }
 
-
-
         // TO DO: Add in a way to delete comments, ensure only the user logged in has access.
         // Also add a way that admin can delete comments from any user
         // Fix the delete action so it does not encounter an error.(possibly need the create post to create an Id with value
 
         [HttpGet, Route("delete")]
+        [Authorize(Policy = "AtLeast21")]
         public IActionResult Delete(long? Id, bool? saveChangesError = false)
         {
             if (Id == null)
@@ -124,6 +123,7 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             return View(comment);
         }
 
+        [Authorize(Policy = "AtLeast21")]
         [HttpPost, Route("delete")]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(long Id)

@@ -11,9 +11,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Troydon_Resume_Online_NET_Core_.Models;
-using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Troydon_Resume_Online_NET_Core_.Models.Account;
+using Troydon_Resume_Online_NET_Core_.Handlers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Troydon_Resume_Online_NET_Core_
 {
@@ -55,6 +57,29 @@ namespace Troydon_Resume_Online_NET_Core_
             .AddEntityFrameworkStores<IdentityDbContext>()
             // Tokens for generating pass a two-factor auth
             .AddDefaultTokenProviders();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly",
+                    policy =>
+                    policy.RequireClaim("AdminNumber")) ;
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AtLeast21", policy =>
+                    policy.Requirements.Add(new AdminNumberRequirement(1, 18)));
+            });
+
+            // Add all of your handlers to DI.
+            services.AddSingleton<IAuthorizationHandler, AdminNumberHandler>();
+            // MyHandler2, ...
+
+
+            // Configure your policies
+            services.AddAuthorization(options =>
+                  options.AddPolicy("Something",
+                  policy => policy.RequireClaim("Permission", "CanViewPage", "CanViewAnything")));
 
             // TO DO: Add sign up with LinkedIn/Facebook
 

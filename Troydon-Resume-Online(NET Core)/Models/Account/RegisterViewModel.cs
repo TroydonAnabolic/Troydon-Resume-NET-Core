@@ -29,5 +29,10 @@ namespace Troydon_Resume_Online_NET_Core_.Models.Account
         [Compare("MobileNumber", ErrorMessage = "The number needs to start with 04 and have 10 digits")]
         public string MobileNumber { get; set; }
 
+        [Display(Name = "Admin Number")]
+        public string AdminNumber { get; set; }
+
+        public DateTime DateOfBirth { get; set; }
+
     }
 }

@@ -58,6 +58,22 @@ a:hover {
     display: inline-block;
 }
 
+body, html {
+    height: 100%;
+}
+
+.bg-error {
+    /* The image used */
+    background-image: url('../images/error-img.jpg');
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px;
+}
+
 /*
 View component
 =============================*/
@@ -117,6 +133,11 @@ footer {
 }
 p.uppercase {
     text-transform: uppercase;
+}
+
+.bottom-padding {
+    padding-bottom: 100px;
+    margin-bottom: 10px;
 }
 
 /*

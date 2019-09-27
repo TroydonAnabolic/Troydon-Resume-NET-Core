@@ -12,6 +12,34 @@
         <h4>Make your user account now</h4>
         <hr />
         <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="FullName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            <label asp-for="DateOfBirth" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="datetime" asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            <label asp-for="MobileNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="number" asp-for="MobileNumber" class="form-control" />
+                <span asp-validation-for="MobileNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+
         <div class="form-group">
             <label asp-for="Email" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -36,14 +64,7 @@
             </div>
         </div>
         <br />
-        <div class="form-group">
-            <label asp-for="MobileNumber" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input type="text" asp-for="MobileNumber" class="form-control" />
-                <span asp-validation-for="MobileNumber" class="text-danger"></span>
-            </div>
-        </div>
-        <br />
+
         <div class="form-group">
             <label asp-for="AdminNumber" class="col-md-2 control-label"></label>
             <div class="col-md-10">

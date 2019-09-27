@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,6 +9,18 @@ namespace Troydon_Resume_Online_NET_Core_.Models.Account
 {
     public class RegisterViewModel
     {
+        [Required]
+        [PersonalData]
+        [DataType(DataType.Text)]
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
+
+        [Required]
+        [PersonalData]
+        [DataType(DataType.DateTime)]
+        [Display(Name = "Date Of Birth")]
+        public DateTime DateOfBirth { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email Address")]
@@ -30,9 +43,10 @@ namespace Troydon_Resume_Online_NET_Core_.Models.Account
         public string MobileNumber { get; set; }
 
         [Display(Name = "Admin Number")]
+        [DataType(DataType.Text)]
         public string AdminNumber { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+
 
     }
 }

@@ -32,7 +32,7 @@ namespace Troydon_Resume_Online_NET_Core_.Handlers
                     calculatedAge--;
                 }
 
-                if (calculatedAge >= requirement.MinimumAge && requirement.AdminNumber is 1)
+                if (calculatedAge >= requirement.MinimumAge && requirement.AdminNumber is 964212)
                 {
                     context.Succeed(requirement);
                 }

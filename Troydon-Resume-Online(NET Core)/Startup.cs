@@ -58,6 +58,8 @@ namespace Troydon_Resume_Online_NET_Core_
             // Tokens for generating pass a two-factor auth
             .AddDefaultTokenProviders();
 
+            services.AddScoped<IUserClaimsPrincipalFactory<User>, MyUserClaimsPrincipalFactory>();
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("AdminOnly",
@@ -68,7 +70,7 @@ namespace Troydon_Resume_Online_NET_Core_
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("AtLeast21", policy =>
-                    policy.Requirements.Add(new AdminNumberRequirement(1, 18)));
+                    policy.Requirements.Add(new AdminNumberRequirement(964212, 18)));
             });
 
             // Add all of your handlers to DI.

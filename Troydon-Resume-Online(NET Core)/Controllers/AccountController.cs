@@ -41,21 +41,20 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = new IdentityUser()
+                User user = new User()
                 {
                     Email = registration.Email,
                     UserName = registration.Email,
-                    PhoneNumber= registration.MobileNumber,
+                    PhoneNumber = registration.MobileNumber,
+                    FullName = registration.FullName,
+                    DateOfBirth = registration.DateOfBirth,
                 };
 
-                //if (!string.IsNullOrEmpty(registration.AdminNumber))
-                //{
-                //    user.Claims.Add(new IdentityUserClaim<string>
-                //    {
-                //        ClaimType = "MobileNumber",
-                //        ClaimValue = registration.AdminNumber
-                //    });
-                //}
+                await _userManager.UpdateSecurityStampAsync(user);
+
+                //SecurityStamp = Guid.NewGuid().ToString()
+
+                // await _userManager.AddClaimAsync(user, new Claim("AdminNumber", registration.AdminNumber));
 
                 var result = await _userManager.CreateAsync(user, registration.Password);
 

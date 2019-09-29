@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -16,13 +17,25 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
     public class FeedbackController : Controller
     {
         private readonly FeedbackDataContext _db;
+
+        IDataProtector _protector;
+
+
         //private readonly ErrorViewModel _error; dependency injectio
 
         public FeedbackController(
             FeedbackDataContext db
+            
           )
         {
             _db = db;
+
+        }
+
+        public FeedbackController(IDataProtectionProvider provider)
+        {
+            _protector = provider.CreateProtector("Troydon_Resume_Online_NET_Core_.Controllers.FeedbackController"
+                        , new string[] { "Profile1" });
         }
 
         //GET: /<controllers>/
@@ -145,6 +158,25 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
             return RedirectToAction("Index");
         }
 
+        // Encrypting Admin
+        [HttpGet]
+        [Route("Admins")]
+        public IEnumerable<string> GetAdmin()
+        {
+            var secretAdmin1 = _protector.Protect("964212");
+
+            return new string[] { secretAdmin1 };
+        }
+
+        // Decrypt
+        [HttpGet]
+        [Route("PlanTextAdmin")]
+        public string GetPlainText(string encryptedAdmin)
+        {
+            var plaintext = _protector.Unprotect(encryptedAdmin);
+
+            return plaintext;
+        }
 
     }
 }

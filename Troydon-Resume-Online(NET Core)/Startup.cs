@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Identity;
 using Troydon_Resume_Online_NET_Core_.Models.Account;
 using Troydon_Resume_Online_NET_Core_.Handlers;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace Troydon_Resume_Online_NET_Core_
 {
@@ -24,6 +25,7 @@ namespace Troydon_Resume_Online_NET_Core_
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -86,6 +88,12 @@ namespace Troydon_Resume_Online_NET_Core_
             // TO DO: Add sign up with LinkedIn/Facebook
 
             services.AddTransient<FormattingService>();
+
+            services.AddDataProtection()
+                    .DisableAutomaticKeyGeneration()
+                    .SetDefaultKeyLifetime(new TimeSpan(14, 0, 0, 0));
+
+            var secret = Configuration["PaymentPass"];
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

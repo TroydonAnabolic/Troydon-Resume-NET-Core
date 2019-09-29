@@ -25,5 +25,7 @@ namespace Troydon_Resume_Online_NET_Core_.Models.Account
             identity.AddClaim(new Claim("AdminNumber", user.AdminNumber ?? ""));
             return identity;
         }
+
+
     }
 }

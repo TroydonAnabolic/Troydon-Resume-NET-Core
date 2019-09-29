@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -18,6 +20,7 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private IEnumerable<ClaimsIdentity> claimsIdentity;
 
         public AccountController(
             UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
@@ -99,6 +102,18 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
                     }
                     else
                     {
+                        // using Microsoft.AspNetCore.Authentication;
+
+                        await HttpContext.SignInAsync(
+                            CookieAuthenticationDefaults.AuthenticationScheme,
+                            new ClaimsPrincipal(claimsIdentity),
+                            new AuthenticationProperties
+                            {
+                                IsPersistent = true,
+                                ExpiresUtc = DateTime.UtcNow.AddMinutes(20)
+                            });
+
+
                         return RedirectToAction(nameof(HomeController.Index), "Home");
                     }
 

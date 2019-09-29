@@ -17,6 +17,7 @@ using Troydon_Resume_Online_NET_Core_.Models.Account;
 using Troydon_Resume_Online_NET_Core_.Handlers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Troydon_Resume_Online_NET_Core_
 {
@@ -94,6 +95,9 @@ namespace Troydon_Resume_Online_NET_Core_
                     .SetDefaultKeyLifetime(new TimeSpan(14, 0, 0, 0));
 
             var secret = Configuration["PaymentPass"];
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -111,8 +115,15 @@ namespace Troydon_Resume_Online_NET_Core_
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+
+            var cookiePolicyOptions = new CookiePolicyOptions
+            {
+                MinimumSameSitePolicy = SameSiteMode.Strict,
+            };
+
+            app.UseCookiePolicy(cookiePolicyOptions);
 
             app.UseAuthentication();
 

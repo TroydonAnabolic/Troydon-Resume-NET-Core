@@ -1,24 +1,45 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Troydon_Resume_Online_NET_Core_.Models;
 
 namespace Troydon_Resume_Online_NET_Core_.Controllers
 {
     // Class Starts with localhost:XXXX/feedback
+    [Authorize]
     [Route("Feedback")]
     public class FeedbackController : Controller
     {
         private readonly FeedbackDataContext _db;
 
-        public FeedbackController(FeedbackDataContext db)
+        IDataProtector _protector;
+
+
+        //private readonly ErrorViewModel _error; dependency injectio
+
+        public FeedbackController(
+            FeedbackDataContext db
+            
+          )
         {
             _db = db;
+
+        }
+
+        public FeedbackController(IDataProtectionProvider provider)
+        {
+            _protector = provider.CreateProtector("Troydon_Resume_Online_NET_Core_.Controllers.FeedbackController"
+                        , new string[] { "Profile1" });
         }
 
         //GET: /<controllers>/
+        [AllowAnonymous]
         [Route("")]
         public IActionResult Index(int page = 0)
         {
@@ -89,5 +110,73 @@ namespace Troydon_Resume_Online_NET_Core_.Controllers
                 key = comment.Key
             });
         }
+
+        // TO DO: Add in a way to delete comments, ensure only the user logged in has access.
+        // Also add a way that admin can delete comments from any user
+        // Fix the delete action so it does not encounter an error.(possibly need the create post to create an Id with value
+
+        [HttpGet, Route("delete")]
+        [Authorize(Policy = "AtLeast21")]
+        public IActionResult Delete(long? Id, bool? saveChangesError = false)
+        {
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
+            }
+            Comment comment = _db.Comments.Find(Id);
+            if (comment == null)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+
+            return View(comment);
+        }
+
+        [Authorize(Policy = "AtLeast21")]
+        [HttpPost, Route("delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(long Id)
+        {
+            try
+            {
+                Comment comment = _db.Comments.Find(Id);
+                comment.Person = User.Identity.Name;
+                comment.Commented = DateTime.Now;
+
+                _db.Comments.Remove(comment);
+                _db.SaveChanges();
+            }
+            catch (DataException/* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                return RedirectToAction("Delete", new { id = Id, saveChangesError = true });
+            }
+            return RedirectToAction("Index");
+        }
+
+        // Encrypting Admin
+        [HttpGet]
+        [Route("Admins")]
+        public IEnumerable<string> GetAdmin()
+        {
+            var secretAdmin1 = _protector.Protect("964212");
+
+            return new string[] { secretAdmin1 };
+        }
+
+        // Decrypt
+        [HttpGet]
+        [Route("PlanTextAdmin")]
+        public string GetPlainText(string encryptedAdmin)
+        {
+            var plaintext = _protector.Unprotect(encryptedAdmin);
+
+            return plaintext;
+        }
+
     }
 }

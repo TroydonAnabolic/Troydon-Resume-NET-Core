@@ -1,0 +1,23 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+
+@*@section Styles {
+    <link href="@Url.Content("~/css/error.css")" rel="stylesheet" type="text/css" />
+}*@
+
+    <body>
+        <div class="bg-error text-center">
+            @section lorem { }
+            <h1 class="text-danger text-right">OOPS!</h1>
+            <h2 class="text-danger text-right">You broke it! :(</h2>
+            @if (Model.ShowRequestId)
+            {
+                <p class="text-right text-white">
+                    <strong>Request ID:</strong> <code class="text-white">@Model.RequestId</code>
+                </p>
+            }
+            </div>
+    </body>
